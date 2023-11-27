@@ -578,7 +578,7 @@ form.hero-search input {
 /*     transform: translateZ(0); */
 }
 /* iOS Safari specific fixes for a fixed sidebar */
-@supports (-webkit-overflow-scrolling: touch) {
+/* @supports (-webkit-overflow-scrolling: touch) {
     .alphabet-list.sticky {
         position: fixed;
         position: -webkit-fixed;
@@ -586,7 +586,7 @@ form.hero-search input {
         top: 0;
         z-index: 999;
     }
-}
+} */
 
 .alphabet-list-item {
     width: 2.5rem;
