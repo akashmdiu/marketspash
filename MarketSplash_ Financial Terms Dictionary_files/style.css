@@ -575,7 +575,7 @@ form.hero-search input {
     margin-bottom: 30px;
     background-color: #f5f5f6;
     justify-content: center;
-/*     transform: translateZ(0); */
+    transform: translateZ(0);
 }
 /* iOS Safari specific fixes for a fixed sidebar */
 
