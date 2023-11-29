@@ -1,7 +1,7 @@
 body {
             margin: 0;Ï
             transition: padding-top 0.3s ease; /* Add transition for smoother effect */
-            background: green;
+            background: black;
         }
 li.s-language-switcher {
     position: relative;
@@ -585,53 +585,33 @@ form.hero-search input {
 }
 
 
-.alphabet-list.sticky {
-    position: -webkit-sticky;
-position: sticky;
-    top: 0;
-    z-index: 999;
-    width: 100%;
-    left: 0;
-    right: 0;
-                transform: translateY(0);
-            backface-visibility: hidden; 
+@keyframes slideInDown {
+    from {
+        transform: translate3d(0,-100%,0);
+        visibility: visible
+    }
 
-            overflow: hidden;
-            background-color: #333;
-            transition: transform 0.3s ease; /* Add transition for smoother effect */
-            position: absolute;
-            width: 100%;
-            box-sizing: border-box;
-            top: 0;
-            left: 0;
-            right: 0;
-
-}
-
-/* iOS Safari specific fixes for a fixed sidebar */
-@supports (-webkit-overflow-scrolling: touch) {
-    .alphabet-list.sticky {
-        position: -webkit-sticky;
-                
-        position: sticky;
-        /* Old syntax for iOS 5 and earlier */
-        top: 0;
-        z-index: 999;
-        
-    width: 100%;
-    left: 0;
-    right: 0;
-                 overflow: hidden;
-            background-color: #333;
-            transition: transform 0.3s ease; /* Add transition for smoother effect */
-            position: absolute;
-            width: 100%;
-            box-sizing: border-box;
-            top: 0;
-            left: 0;
-            right: 0;
+    to {
+        transform: translate3d(0,0,0)
     }
 }
+
+.slideInDown {
+    animation-name: slideInDown
+}
+
+.alphabet-list.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-name: slideInDown;
+    animation-name: slideInDown;
+}
+
 /* iOS Safari specific fixes for a fixed sidebar */
 
 .alphabet-list-item {
