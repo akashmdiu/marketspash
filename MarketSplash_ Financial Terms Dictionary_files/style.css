@@ -585,7 +585,8 @@ form.hero-search input {
 
 
 .alphabet-list.sticky {
-    position: fixed;
+    position: -webkit-sticky;
+position: sticky;
     top: 0;
     z-index: 999;
     width: 100%;
