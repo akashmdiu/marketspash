@@ -1,6 +1,7 @@
 body {
             margin: 0;Ï
             transition: padding-top 0.3s ease; /* Add transition for smoother effect */
+            background: red;
         }
 li.s-language-switcher {
     position: relative;
@@ -593,6 +594,7 @@ position: sticky;
     left: 0;
     right: 0;
                 transform: translateY(0);
+            backface-visibility: hidden; 
 
 }
 
