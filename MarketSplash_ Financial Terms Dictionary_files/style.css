@@ -1,7 +1,7 @@
 body {
             margin: 0;Ï
             transition: padding-top 0.3s ease; /* Add transition for smoother effect */
-            background: black;
+            background: gray;
         }
 li.s-language-switcher {
     position: relative;
@@ -573,7 +573,7 @@ form.hero-search input {
 
 .alphabet-list {
     display: flex;
-    flex-wrap: wrap;
+/*     flex-wrap: wrap; */
     list-style: none;
     padding: 0;
     margin: 0;
