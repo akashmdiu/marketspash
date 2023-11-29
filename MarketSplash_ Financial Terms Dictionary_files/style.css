@@ -599,8 +599,9 @@ position: sticky;
 /* iOS Safari specific fixes for a fixed sidebar */
 @supports (-webkit-overflow-scrolling: touch) {
     .alphabet-list.sticky {
-        position: fixed;
-        position: -webkit-fixed;
+        position: -webkit-sticky;
+                
+        position: sticky;
         /* Old syntax for iOS 5 and earlier */
         top: 0;
         z-index: 999;
