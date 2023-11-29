@@ -1,7 +1,7 @@
 body {
             margin: 0;
             transition: padding-top 0.3s ease; /* Add transition for smoother effect */
-            background: gray;
+            background: orange;
         }
 li.s-language-switcher {
     position: relative;
@@ -570,9 +570,11 @@ form.hero-search input {
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {}
 
-
+.filter-content {
+    position: relative;
+}
 .alphabet-list {
-    display: flex;
+    display: inline;
 /*     flex-wrap: wrap; */
     list-style: none;
     padding: 0;
