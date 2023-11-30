@@ -3911,10 +3911,10 @@
           };
 
           // Function to set up smooth scrolling behavior for the alphabet list
-          const alphabetLists = document.querySelector('.alphabet-list');
-          const itemLists = document.querySelectorAll('.alphabet-list-item');
-
           const setupSmoothScroll = () => {
+            // Function to set up smooth scrolling behavior for the alphabet list
+            const alphabetLists = document.querySelector('.alphabet-list');
+            const itemLists = document.querySelectorAll('.alphabet-list-item');
 
             if (alphabetLists) {
               const positionFromTop = alphabetLists.getBoundingClientRect().top;
@@ -3932,30 +3932,38 @@
               };
             }
 
-          }
+            if (alphabetLists) {
+              document.addEventListener("DOMContentLoaded", function () {
+                const alphabetListItems = document.querySelectorAll(".alphabet-list-item");
+                const container = document.querySelector(".cards-layout");
+                const stickyNav = document.querySelector(".alphabet-list");
+                const letterStarts = document.querySelectorAll(".letter-start");
 
-          if (alphabetLists) {
-            document.addEventListener("DOMContentLoaded", function () {
-              const alphabetListItems = document.querySelectorAll(".alphabet-list-item");
-              const stickyNav = document.querySelector(".alphabet-list");
+                alphabetListItems.forEach(function (item) {
+                  item.addEventListener("click", function (e) {
+                    const scrollLetter = this.getAttribute("data-letter");
+                    const targetElement = document.querySelector(`.letter-start[data-scroll-letter="${scrollLetter}"]`);
 
-              alphabetListItems.forEach(function (item) {
-                item.addEventListener("click", function () {
-                  const scrollLetter = this.getAttribute("data-letter");
-                  const targetElement = document.querySelector(`.letter-start[data-scroll-letter="${scrollLetter}"]`);
-
-                  if (targetElement) {
-                    const stickyNavHeight = stickyNav.getBoundingClientRect().height; // Change this to your actual sticky nav height
-                    const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - stickyNavHeight - 10;
-
-                    window.scrollTo({
-                      top: targetPosition,
-                      behavior: "smooth",
+                    alphabetListItems?.forEach((item) => {
+                      item.classList.remove('active');
                     });
-                  }
+
+                    e.target.classList.add('active');
+
+                    if (targetElement) {
+                      const stickyNavHeight = stickyNav.getBoundingClientRect().height; // Change this to your actual sticky nav height
+                      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - stickyNavHeight - 10;
+
+                      window.scrollTo({
+                        top: targetPosition,
+                        behavior: "smooth",
+                      });
+                    }
+                  });
                 });
               });
-            });
+            }
+
           }
 
           // Function to perform search by title
