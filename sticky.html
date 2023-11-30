@@ -11545,6 +11545,17 @@
 
     <script>
         // You can add JavaScript code here if needed
+        const positionFromTop = alphabetLists.getBoundingClientRect().top;
+            window.onscroll = function () {
+              const divTop = alphabetLists.getBoundingClientRect().top;
+              const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+              if (scrollTop > positionFromTop && divTop <= 0) {
+                alphabetLists.classList.add('sticky');
+              } else {
+                alphabetLists.classList.remove('sticky');
+              }
+            };
     </script>
 
 </body>
